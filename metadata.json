@@ -1,0 +1,110 @@
+{
+  "name": "Analytical Labs-iptables",
+  "author": "Tom Barber",
+  "description": "",
+  "license": "",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "version": "1.0",
+  "checksums": {
+    "COPYING": "751419260aa954499f7abaabaa882bbe",
+    "Modulefile": "fca72cf1379ca6337b6e9e47e98bf87c",
+    "README": "3a0e41784cfcc4160b2da535661e328a",
+    "README.rst": "7d2deb3da3d774b6f83a1bf3d58d974d",
+    "lib/puppet/test/iptables.rb": "b079e461bf96bd1194fb72abb8802515",
+    "lib/puppet/type/iptables.rb": "3f3aa5605e4a1688936892ad316af85e",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "tests/init.pp": "d5b501ba7f6f34857338dd77647c37c3"
+  },
+  "types": [
+    {
+      "parameters": [
+        {
+          "name": "name",
+          "doc": "The name of the resource"
+        },
+        {
+          "name": "chain",
+          "doc": "holds value of iptables -A parameter.\n                  Possible values are: \u0027INPUT\u0027, \u0027FORWARD\u0027, \u0027OUTPUT\u0027, \u0027PREROUTING\u0027, \u0027POSTROUTING\u0027.\n                  Default value is \u0027INPUT\u0027"
+        },
+        {
+          "name": "table",
+          "doc": "one of the following tables: \u0027nat\u0027, \u0027mangle\u0027,\n                  \u0027filter\u0027 and \u0027raw\u0027. Default one is \u0027filter\u0027"
+        },
+        {
+          "name": "proto",
+          "doc": "holds value of iptables --protocol parameter.\n                  Possible values are: \u0027tcp\u0027, \u0027udp\u0027, \u0027icmp\u0027, \u0027esp\u0027, \u0027ah\u0027, \u0027vrrp\u0027, \u0027igmp\u0027, \u0027all\u0027.\n                  Default value is \u0027all\u0027"
+        },
+        {
+          "name": "jump",
+          "doc": "holds value of iptables --jump target\n                  Possible values are: \u0027ACCEPT\u0027, \u0027DROP\u0027, \u0027REJECT\u0027, \u0027DNAT\u0027, \u0027LOG\u0027, \u0027MASQUERADE\u0027, \u0027REDIRECT\u0027."
+        },
+        {
+          "name": "source",
+          "doc": "value for iptables --source parameter"
+        },
+        {
+          "name": "destination",
+          "doc": "value for iptables --destination parameter"
+        },
+        {
+          "name": "sport",
+          "doc": "holds value of iptables [..] --source-port parameter.\n                  If array is specified, values will be passed to multiport module.\n                  Only applies to tcp/udp."
+        },
+        {
+          "name": "dport",
+          "doc": "holds value of iptables [..] --destination-port parameter.\n                  If array is specified, values will be passed to multiport module.\n                  Only applies to tcp/udp."
+        },
+        {
+          "name": "iniface",
+          "doc": "value for iptables --in-interface parameter"
+        },
+        {
+          "name": "outiface",
+          "doc": "value for iptables --out-interface parameter"
+        },
+        {
+          "name": "todest",
+          "doc": "value for iptables \u0027-j DNAT --to-destination\u0027 parameter"
+        },
+        {
+          "name": "reject",
+          "doc": "value for iptables \u0027-j REJECT --reject-with\u0027 parameter"
+        },
+        {
+          "name": "log_level",
+          "doc": "value for iptables \u0027-j LOG --log-level\u0027 parameter"
+        },
+        {
+          "name": "log_prefix",
+          "doc": "value for iptables \u0027-j LOG --log-prefix\u0027 parameter"
+        },
+        {
+          "name": "icmp",
+          "doc": "value for iptables \u0027-p icmp --icmp-type\u0027 parameter"
+        },
+        {
+          "name": "state",
+          "doc": "value for iptables \u0027-m state --state\u0027 parameter.\n                  Possible values are: \u0027INVALID\u0027, \u0027ESTABLISHED\u0027, \u0027NEW\u0027, \u0027RELATED\u0027."
+        },
+        {
+          "name": "limit",
+          "doc": "value for iptables \u0027-m limit --limit\u0027 parameter.\n                  Example values are: \u002750/sec\u0027, \u002740/min\u0027, \u002730/hour\u0027, \u002710/day\u0027."
+        },
+        {
+          "name": "burst",
+          "doc": "value for \u0027--limit-burst\u0027 parameter.\n                  Example values are: \u00275\u0027, \u002710\u0027."
+        },
+        {
+          "name": "redirect",
+          "doc": "value for iptables \u0027-j REDIRECT --to-ports\u0027 parameter."
+        }
+      ],
+      "name": "iptables",
+      "doc": "Manipulate iptables rules"
+    }
+  ],
+  "dependencies": []
+}
